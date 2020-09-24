@@ -8,11 +8,11 @@ const storeBody = (body, input) => {
   return `sorry, ${input} does not exist`;
 };
 
-const fetchBreedDescription = function (breedName, callback) {
+const fetchBreedDescription = function(breedName, callback) {
   request(`https://api.thecatapi.com/v1/breeds/search?q=${breedName}`, (error, response, body) => {
-  if (!error) callback(error, storeBody(body, breedName));
-  if (error) callback(error, null);
+    if (!error) callback(error, storeBody(body, breedName));
+    if (error) callback(error, null);
   });
-}
+};
 
 module.exports = { fetchBreedDescription };
